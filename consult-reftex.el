@@ -233,7 +233,7 @@ If PROMPTP, prompt for their values, else, clean-up following
 (defun consult-reftex--format-citations (command citations &optional separator)
   "Format CITATIONS using COMMAND.
 
-If CITATIONS"
+If CITATIONS is a list, join with SEPARATOR (a comma if nil)."
   (format-spec command (list (cons ?l (if (stringp citations)
                                           citations
                                         (string-join citations (or separator ",")))))))
